@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+  <data>
+    <template id="snippet_testimonial_opt" name="Snippet Testimonial Options" inherit_id="website.snippet_options">
+      <xpath expr="//div[@data-js='background']" position="after">
+        <div data-js="snippet_testimonial_options" data-selector=".snippet_testimonial">
+        <!-- Options group - targeting class="snippet_testimonial" from snippets.xml
+              "data-js" adds a reference to a javascript function defined in /static/tutorial_editor.js-->
+          <li class="dropdown-submenu">
+            <a href="#">Your Options</a>
+            <ul class="dropdown-menu">
+            <!-- Options list - "select_class" will apply the attribute to the
+                 data-selector element. "toggle_class" can apply one or more classes -->
+              <li data-select_class="opt_shadow"><a>Shadow Images</a></li>
+              <li data-select_class="opt_grey_bg"><a>Grey Bg</a></li>
+              <li data-select_class=""><a>None</a></li>
+            </ul>
+          </li>
+        </div>
+      </xpath>
+     </template>
+  </data>
+</openerp>

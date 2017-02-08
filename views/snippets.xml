@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+  <data>
+
+    <template id="snippet_testimonial" name="Testimonial snippet">
+      <section class="snippet_testimonial">
+        <div class="container text-center">
+          <div class="row">
+            <div class="col-md-4">
+              <img alt="client" class="img-circle" src="/theme_tutorial/static/src/img/client_1.jpg"/>
+              <h3>Client Name</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="col-md-4">
+              <img alt="client" class="img-circle" src="/theme_tutorial/static/src/img/client_2.jpg"/>
+              <h3>Client Name</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="col-md-4">
+              <img alt="client" class="img-circle" src="/theme_tutorial/static/src/img/client_3.jpg"/>
+              <h3>Client Name</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </template>
+    <!-- This snippet should display 3 client testimonials when inserted
+         onto the page and will be editable by the user. -->
+    <!-- Any section element can be edited like a block of content.
+          The publisher can move or duplicate it. It’s also possible to set a
+          background image or color. Section is the standard main container of
+          any snippet. -->
+    <!-- The use of class="col-md-*" directly descended from a "row">
+          can be resized by the editor -->
+    <!-- "contenteditable="False"" prevents editing to the element and its
+          children. "contenteditable="True"" allows editing within an element
+          that editing is disabled. -->
+    <!-- Any link can be edited and styled. Using "Link Modal" you can replace
+          it with a button. -->
+    <!-- When using <span class="fa"> editing will open the Pictogram library -->
+    <!-- When using <img />, once clicked the Image Library will open. -->
+
+
+    <template id="place_into_bar" inherit_id="website.snippets" name="Place into bar">
+      <xpath expr="//div[@id='snippet_structure']/div[contains(@class, 'o_panel_body')]" position="inside">
+        <t t-snippet="theme_tutorial.snippet_testimonial"
+           t-thumbnail="/theme_tutorial/static/src/img/ui/snippet_thumb.jpg"/>
+      </xpath>
+    </template>
+    <!-- the id "snippet_structure" is saying that we want to add the
+         template defined below into the Website Builder under the
+         "Structure" section. -->
+    <!-- t-snippet is identifying what you want to
+         insert into the WB. t-thumbnail is defining an image to be diplayed
+         in the WB. -->
+    <!-- Other sections in the WB include "Content" (//div[@id='snippet_content']),
+         "Feature" (//div[@id='snippet_feature']), and "Effect" (//div[@id='snippet_effect']) -->
+
+  </data>
+</openerp>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+  <data>
+    <!-- === Services Page === -->
+    <template name="Services page" id="website.services" page="True">
+      <t t-call="website.layout">
+        <div id="wrap">
+          <div class="container">
+            <h1>Our Services</h1>
+            <ul class="services">
+              <li>Cloud Hosting</li>
+              <li>Support</li>
+              <li>Unlimited space</li>
+            </ul>
+            <!-- === Snippets' area === -->
+            <div class="oe_structure" />
+          </div>
+        </div>
+      </t>
+    </template>
+    <!-- A page will be created with the template id name. "Services" in this
+         case, when page="True". Extends website.layout with t-call.
+         "oe-stucture" creates a drop & drag field on the page. -->
+
+    <record id="services_page_link" model="website.menu">
+      <field name="name">Services</field>
+      <field name="url">/page/services</field>
+      <field name="parent_id" ref="website.main_menu" />
+      <field name="sequence" type="int">99</field>
+    </record>
+    <!-- "website.main_menu" means we're creating a new menu item in the navbar.
+         the "sequence" type indicates in what order the menu items fall.
+         "Home" sequence is int 10, and "Contact Us" is 60. 99 will fall
+         at the end. -->
+  </data>
+</openerp>
